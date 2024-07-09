@@ -5,7 +5,7 @@ export const Changes = () => {
   const [changes, setChanges] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8000/api/schedules/changes")
+    fetch("https://back-mycontent-test.vercel.app/api/schedules/changes")
       .then((res) => res.json())
       .then((data) => setChanges(data.changes))
       .catch((error) => console.log(error));

@@ -26,11 +26,14 @@ export const Schedules = () => {
       state: "",
     },
     onSubmit: async ({ row, state }) => {
-      const request = await fetch("http://localhost:8000/api/schedules", {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ row: row, state: state, closer: closer }),
-      });
+      const request = await fetch(
+        "https://back-mycontent-test.vercel.app/api/schedules",
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ row: row, state: state, closer: closer }),
+        }
+      );
 
       if (request.status === 200) {
         const { msg } = await request.json();
